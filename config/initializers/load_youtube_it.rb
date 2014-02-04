@@ -1,4 +1,6 @@
 require 'ostruct'
-raw_config = File.read(::Rails.root.to_s + "/config/youtube_it.yml")
-YouTubeITConfig =  OpenStruct.new(YAML.load(raw_config)[Rails.env])
+
+config_hash = {"dev_key" => ENV['DEV_KEY'], "username" => ENV['YT_ADMIN'], "password" => ENV['YT_PASSWORD']}
+
+YouTubeITConfig =  OpenStruct.new(config_hash)
 
