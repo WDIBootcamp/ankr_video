@@ -45,7 +45,8 @@ class Video < ActiveRecord::Base
       opts = {:title => params[:title],
              :description => params[:description],
              :category => "People",
-             :keywords => ["test"]}
+             :keywords => ["Introduce yourself"],
+             :praviacy => ["Unlisted"]}
       params[:is_unpublished] == "1" ? opts.merge(:private => "true") : opts
     end
 end

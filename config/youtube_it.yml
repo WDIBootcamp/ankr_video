@@ -1,7 +1,7 @@
 common: &common
   dev_key: ENV['DEV_KEY']
-  username:  ENV['USERNAME']
-  password:  ENV['PASSWORK']
+  username: ENV['YT_ADMIN']
+  password: ENV['YT_PASSWORD']
   
 test:
   <<: *common
