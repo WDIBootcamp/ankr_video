@@ -1,12 +1,9 @@
-<div class="block">
-  <div class="secondary-navigation">
-    <ul class="wat-cf">
-      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", videos_path  %></li>
-      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_video_path %></li>
-      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", video_path %></li>
-    </ul>
-  </div>          
-  <div class="content">
+      
+      <li class="first"><%= link_to "List", videos_path  %></li>
+      <li><%= link_to "New", new_video_path %></li>
+      <li class="active"><%= link_to "Show", video_path %></li>
+
+  <div class="container">
     <div class="inner">
       
         <p>
@@ -44,5 +41,3 @@
 <br/><br/>
 
 </div>
-
-<% content_for :sidebar, render(:partial => 'sidebar') -%>

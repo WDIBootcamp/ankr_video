@@ -1,7 +1,8 @@
 class VideosController < InheritedResources::Base
 
   def upload
-    @video = Video.create(params[:video])
+    upload_info = params.require(:video).permit(:title, :description)
+    @video = Video.create(upload_info)
     if @video
       @upload_info = Video.token_form(params[:video], save_video_new_video_url(:video_id => @video.id))
     else
@@ -12,8 +13,9 @@ class VideosController < InheritedResources::Base
   end
 
   def update
-    @video     = Video.find(params[:id])
-    @result    = Video.update_video(@video, params[:video])
+    updated_info = params.require(:video).permit(:title, :description)
+    @video = Video.find(params[:id])
+    @result = Video.update_video(@video, updated_info)
     respond_to do |format|
       format.html do
         if @result
