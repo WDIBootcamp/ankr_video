@@ -40,6 +40,8 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem 'foundation-rails'
+
 group :development do 
 	# better looking errors
 	gem 'better_errors'
@@ -59,7 +61,7 @@ group :development do
 
 	#dont use quiet_assets AND pry-byebug, might not work together
 	# gem 'quiet_assets'
+
+	#to generate files for an application layout, navigation links, and flash messages styled with Foundation CSS classes and layout.
+	gem 'rails_layout'
 end
-
-
-gem 'foundation-rails'

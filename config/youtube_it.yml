@@ -1,7 +1,7 @@
 common: &common
-  dev_key: AIzaSyDQpOQfxbtmGg5xR84UmEM0J-Ji5e-6a80
-  username:  sclaudinodaffara@gmail.com
-  password:  Ankrvideo
+  dev_key: ENV['DEV_KEY']
+  username:  ENV['USERNAME']
+  password:  ENV['PASSWORK']
   
 test:
   <<: *common

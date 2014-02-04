@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>VidMe</title>
-  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"> -->
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application", "data-turbo-links-track" => true %>
-  <%= csrf_meta_tag %>
-</head>
-
-<body>
-
-      <h1><a href="/">VidMe</a></h1>
-
-        <% flash.each do |type, message| -%>
-          <div class="message <%= type %>">
-            <p><%= message %></p>
-          </div>
-        <% end -%>
-      </div>
-      <div id="main">
-        <%= yield %>
-      </div>
-    </div>    
-</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Ankr Video" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ankr Video" %>">
+    <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
+    <%# Modernizr is required for Zurb Foundation %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    </main>
+  </body>
 </html>
