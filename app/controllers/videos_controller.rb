@@ -2,7 +2,11 @@ class VideosController < InheritedResources::Base
 
   def upload
     upload_info = params.require(:video).permit(:title, :description)
+    gon.title = upload_info['title']
+    gon.description = upload_info['description']
+
     @video = Video.create(upload_info)
+
     if @video
       @upload_info = Video.token_form(params[:video], save_video_new_video_url(:video_id => @video.id))
     else

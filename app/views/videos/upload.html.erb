@@ -1,21 +1,24 @@
-<div class="block">
-  <div class="secondary-navigation">
-    <ul class="wat-cf">
-      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", videos_path  %></li>
-      <li class="active"><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_video_path %></li>
-    </ul>
-  </div>          
-  <div class="content">            
-    <h2 class="title">Introduce Yourself</h2>
-    <div class="inner">
-      <p>Step 2: upload a new video.</p>
+<%= render "header" %>      
+         
+<h2 class="title">Introduce Yourself</h2>
 
-      <%= form_tag @upload_info[:url], :multipart => true do %>
-        <%= hidden_field_tag :token, @upload_info[:token] %>
-        <%= label_tag :file %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Upload video" %>
-      <% end %>    
-    </div>
-  </div>
-</div>
+<p>Step 2: upload a new video.</p>
+
+<!-- 1. The 'widget' div element will contain the upload widget.
+The 'player' div element will contain the player IFrame. -->
+
+
+<div id="widget"><iframe id="widget" type="text/html" width="640" height="390"
+  src="https://www.youtube.com/upload_embed" frameborder="0"></iframe></div>
+<!-- <div id="player"></div> -->
+
+
+<%= form_tag @upload_info[:url], :multipart => true do %>
+  <%= hidden_field_tag :token, @upload_info[:token] %>
+<!--   <iframe id="widget" type="text/html" width="640" height="390"
+  src="https://www.youtube.com/upload_embed" frameborder="0"></iframe> -->
+  <%= label_tag :file %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload video" %>
+<% end %>    
+

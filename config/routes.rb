@@ -1,4 +1,5 @@
 AnkrVideo::Application.routes.draw do
+  
   resources :videos do
     member do
       post :add_comment

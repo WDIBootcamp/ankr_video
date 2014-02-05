@@ -6,11 +6,6 @@ gem 'youtube_it', :git => 'https://github.com/kylejginavan/youtube_it'
 gem 'inherited_resources'
 gem 'acts_as_commentable'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3' , '~> 1.3.6'
-
-gem 'pry', :group => :development
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -41,6 +36,13 @@ end
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'foundation-rails'
+
+gem 'gon'
+
+gem 'pg'
+
+# This makes it so your app logs in a way that Heroku likes.
+gem 'rails_12factor', :group => :production
 
 group :development do 
 	# better looking errors

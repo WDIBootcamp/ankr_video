@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= include_gon %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Ankr Video" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ankr Video" %>">
