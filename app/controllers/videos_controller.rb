@@ -8,8 +8,11 @@ class VideosController < InheritedResources::Base
     @video = Video.create(upload_info)
 
     if @video
+      # redirects me to save_video method (??)
       @upload_info = Video.token_form(params[:video], save_video_new_video_url(:video_id => @video.id))
     else
+      # go to the new.html.erb page -- happens just encase somehow the user
+      # reached this page without going through the new page
       respond_to do |format|
         format.html { render "/videos/new" }
       end
@@ -34,6 +37,7 @@ class VideosController < InheritedResources::Base
   end
 
   def save_video
+    # got here from upload method
     @video = Video.find(params[:video_id])
     if params[:status].to_i == 200
       @video.update_attributes(:yt_video_id => params[:id].to_s, :is_complete => true)
@@ -41,6 +45,7 @@ class VideosController < InheritedResources::Base
     else
       Video.delete_video(@video)
     end
+    # redirected to the index page
     redirect_to videos_path, :notice => "video successfully uploaded"
   end
 
