@@ -7,8 +7,11 @@ gem 'inherited_resources'
 gem 'acts_as_commentable'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3' , '~> 1.3.6'
+# gem 'sqlite3' , '~> 1.3.6'
 
+gem 'pg'
+
+gem 'rails_12factor', :group => :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
