@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+  
+
+  include SessionsHelper
+
+
   protect_from_forgery
 
   helper_method :yt_client
