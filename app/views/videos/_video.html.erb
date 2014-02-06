@@ -6,7 +6,7 @@
 </p>
   <%= link_to video.title, video_path(video) %>
   <%= video.created_at %>
-  <%= link_to "Comment", video_path(video) %> |
+  <%= link_to "Comment", video_path(video.id) %> |
           <%= link_to "Edit", edit_video_path(video) %> |
           <%= link_to "Delete", video_path(video), :method => :delete, :confirm => "Are you sure?" %>
 

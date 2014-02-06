@@ -4,6 +4,12 @@ class VideosController < InheritedResources::Base
     @videos = Video.all
   end
 
+  def show
+    id = params.require(:id)
+    @video = Video.find(id)
+  end
+
+
   def upload
     upload_info = params.require(:video).permit(:title, :description)
     gon.title = upload_info['title']
