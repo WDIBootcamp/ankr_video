@@ -7,9 +7,9 @@
 
   <%= link_to video.title, video_path(video) %>
   <%= video.created_at %>
-  <%= link_to "Comment", video_path(video.id) %> |
-          <%= link_to "Edit", edit_video_path(video) %> |
-          <%= link_to "Delete", video_path(video), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+  <%= link_to "Show", video_path(video.id) %> |
+          <%= link_to "Edit", edit_video_path(video.id) %> |
+          <%= button_to "Delete", video_path(video.id), :method => :delete, :confirm => "Are you sure?" %>
 </p>
 </div>
 </div>

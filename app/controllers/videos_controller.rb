@@ -9,6 +9,13 @@ class VideosController < InheritedResources::Base
     @video = Video.find(id)
   end
 
+  def new
+    if not signed_in?
+      flash[:sucess] = "You must sign in"
+      redirect_to new_session_path
+    end
+    @video = Video.new
+  end
 
   def upload
     upload_info = params.require(:video).permit(:title, :description)
@@ -29,6 +36,35 @@ class VideosController < InheritedResources::Base
     end
   end
 
+  def save_video
+    # got here from upload method
+    @video = Video.find(params[:video_id])
+    if params[:status].to_i == 200
+      @video.update_attributes(:yt_video_id => params[:id].to_s, :is_complete => true)
+      Video.delete_incomplete_videos
+      current_user.videos << @video
+    else
+      Video.delete_video(@video)
+    end
+    # redirected to the index page
+    redirect_to videos_path, :notice => "video successfully uploaded"
+  end
+
+
+  def edit
+    id = params.require(:id)
+
+    while signed_in?
+      if not current_user.videos.where(:id => id).first
+        flash[:sucess] = "You can only edit your own videos"
+        redirect_to root_path
+      end
+    end
+
+    @video = Video.find(id)
+
+  end 
+
   def update
     updated_info = params.require(:video).permit(:title, :description)
     @video = Video.find(params[:id])
@@ -46,28 +82,26 @@ class VideosController < InheritedResources::Base
     end
   end
 
-  def save_video
-    # got here from upload method
-    @video = Video.find(params[:video_id])
-    if params[:status].to_i == 200
-      @video.update_attributes(:yt_video_id => params[:id].to_s, :is_complete => true)
-      Video.delete_incomplete_videos
-    else
-      Video.delete_video(@video)
-    end
-    # redirected to the index page
-    redirect_to videos_path, :notice => "video successfully uploaded"
-  end
-
   def destroy
-    @video = Video.find(params[:id])
-    if Video.delete_video(@video)
+    id = params[:id]
+    @video = Video.find(id)
+
+    if not current_user.videos.where(:id => id).first
+      flash[:sucess] = "You can only delete your own videos"
+      redirect_to root_path
+      return
+          
+    elsif Video.delete_video(@video)
       flash[:notice] = "video successfully deleted"
+
     else
       flash[:error] = "video unsuccessfully deleted"
+
     end
+
     redirect_to videos_path
   end
+
 
   def add_comment
     @video = Video.find(params[:id])

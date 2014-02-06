@@ -13,11 +13,11 @@
 
 class Video < ActiveRecord::Base
   acts_as_commentable
-  
+  belongs_to :user
   attr_accessor :comment
   
-  scope :completes,   where(:is_complete => true)
-  scope :incompletes, where(:is_complete => false)
+  scope :completes,   -> { where(:is_complete => true) }
+  scope :incompletes, -> { where(:is_complete => false) }
   
   def create_comment(comment)
     begin
