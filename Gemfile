@@ -6,8 +6,6 @@ gem 'youtube_it', :git => 'https://github.com/kylejginavan/youtube_it'
 gem 'inherited_resources'
 gem 'acts_as_commentable'
 
-gem 'devise'
-
 gem 'pg'
 
 gem 'rails_12factor', :group => :production

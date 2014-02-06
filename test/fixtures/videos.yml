@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: videos
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  description :string(255)
+#  yt_video_id :string(255)
+#  is_complete :boolean          default(FALSE)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 # This model initially had no columns defined.  If you add columns to the

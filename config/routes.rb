@@ -1,6 +1,5 @@
 AnkrVideo::Application.routes.draw do
   
-  devise_for :models
   resources :videos do
     member do
       post :add_comment
@@ -14,6 +13,14 @@ AnkrVideo::Application.routes.draw do
   # via: [:get, :post] "videos/:id/add_comment", :to => "videos#add_comment"
 
   root :to => "videos#index"
+
+
+
+  get'/signin' => 'sessions#new'
+  get '/signup' => 'users#new'
+  delete '/signout', to: 'sessions#destroy’
+
+
 
 end
 
