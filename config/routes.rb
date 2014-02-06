@@ -1,5 +1,6 @@
 AnkrVideo::Application.routes.draw do
   
+  devise_for :models
   resources :videos do
     member do
       post :add_comment

@@ -6,7 +6,7 @@ gem 'youtube_it', :git => 'https://github.com/kylejginavan/youtube_it'
 gem 'inherited_resources'
 gem 'acts_as_commentable'
 
-# gem 'devise'
+gem 'devise'
 
 gem 'pg'
 

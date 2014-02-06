@@ -2,11 +2,12 @@
 
   <div class="content">            
     <h2 class="title">Introduce Yourself</h2>
-    <div class="inner">
-      <p>Step 1: add information about your video.</p>
-      <%= form_for @video, :url => upload_new_video_path, :html => { :class => :form } do |f| -%>
-        <%= render :partial => "form", :locals => {:f => f} %>
-      <% end -%>
-    </div>
+
+	  <p>Step 1: add information about your video.</p>
+	  <!-- redirects me to videos#upload -->
+	  <%= form_for @video, :url => upload_new_video_path, :html => { :class => :form } do |f| -%>
+	    <%= render :partial => "form", :locals => {:f => f} %>
+	  <% end -%>
+
   </div>
 
