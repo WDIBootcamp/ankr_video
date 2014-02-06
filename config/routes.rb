@@ -1,5 +1,7 @@
 AnkrVideo::Application.routes.draw do
   
+  resources :sessions, :users
+
   resources :videos do
     member do
       post :add_comment
@@ -15,10 +17,9 @@ AnkrVideo::Application.routes.draw do
   root :to => "videos#index"
 
 
-
   get'/signin' => 'sessions#new'
   get '/signup' => 'users#new'
-  delete '/signout', to: 'sessions#destroy’
+  delete '/signout', to: 'sessions#destroy'
 
 
 
