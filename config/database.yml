@@ -3,10 +3,8 @@
 development:
   adapter: postgresql
   database: ankr_video_development
-  host: "localhost"
   encoding: unicode
   pool: 5
-  timeout: 5000
 
 
 # Warning: The database defined as "test" will be erased and
@@ -15,15 +13,11 @@ development:
 test:
   adapter: postgresql
   database: ankr_video_test
-  host: "localhost"
   encoding: unicode
   pool: 5
-  timeout: 5000
 
 production:
   adapter: postgresql
   database: ankr_video_production
-  host: "localhost"
   encoding: unicode
   pool: 5
-  timeout: 5000
