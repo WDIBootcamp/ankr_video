@@ -3,11 +3,10 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.2'
 
 gem 'youtube_it', :git => 'https://github.com/kylejginavan/youtube_it'
-gem 'inherited_resources'
-gem 'acts_as_commentable'
+# gem 'inherited_resources'
+# gem 'acts_as_commentable'
 
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3' , '~> 1.3.6'
+gem 'devise'
 
 gem 'pg'
 

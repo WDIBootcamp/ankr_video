@@ -1,14 +1,15 @@
 <div class="row">
 <div class="small-9 large-6 small-centered column">
 <p>
-  <!-- html5 allows the video to be displayed without flash -->
-  <%= raw yt_client.my_video(video.yt_video_id).embed_html5 %>
-</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.yt_video_id %>?rel=0&showinfo=0&autohide=1&controls=0" frameborder="0" allowfullscreen></iframe>
+
+
   <%= link_to video.title, video_path(video) %>
   <%= video.created_at %>
   <%= link_to "Comment", video_path(video.id) %> |
           <%= link_to "Edit", edit_video_path(video) %> |
           <%= link_to "Delete", video_path(video), :method => :delete, :confirm => "Are you sure?" %>
-
+</p>
 </div>
 </div>
