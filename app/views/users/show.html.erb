@@ -1,0 +1,25 @@
+<div class="sign-out"><%= link_to "Sign out", signout_path, method: "delete" %></div>
+
+
+<div class="row">
+	<div class="small-6 small-centered columns">
+
+		<h1><%= @user.name%></h1>
+		<div class="center-text"><%= @user.email %></div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-6 small-centered columns">
+		<% @user.videos.each do |video| %>
+		<div class="flex-video">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.yt_video_id %>?rel=0&showinfo=0&autohide=1&controls=0&preload="auto"&frameborder="0" allowfullscreen></iframe>
+		</div>
+		  <%= link_to video.title, video_path(video) %>
+		  <%= video.created_at %>
+		  <%= link_to "Comments", video_path(video.id) %> |
+		          <%= link_to "Edit", edit_video_path(video.id) %> |
+		          <%= link_to "Delete", video_path(video.id), :method => :delete, :confirm => "Are you sure?" %>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,153 @@
+h1	{
+	font-family: 'Andika', sans-serif;
+}
+
+
+/*
+**---------------------------------------------nav bar
+*/
+
+@import "foundation";
+
+
+.top-bar-section ul li	{
+	padding: 0px 18px;
+}
+
+.home, .sign-in, .record {
+background-color: #E84C30;
+}
+
+@media only screen and (min-width: 0em)	{
+	.top-bar-section li:not(.has-form) a:not(.button) {
+	padding: 0 15px;
+	line-height: 45px;
+	background: #E84C30;
+	}
+}
+
+.top-bar  {
+  background: #E84C30;
+}
+
+@media only screen and (min-width: 45em) {
+	.top-bar-section ul li {
+	padding: 0px 80px;
+	}	
+}
+
+@media only screen and (min-width: 90em) {
+	.top-bar-section ul li {
+	padding: 0px 200px;
+	}	
+}
+
+/*
+**---------------------------------------------video#index
+*/
+
+
+.yak {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 2em;
+}
+
+.yak-img	{
+	text-align: center;
+	margin-top: -80px;
+}
+
+.everbody-else	{
+	margin-top: -100px;
+}
+
+.custom-panel	{
+
+}
+
+p a {
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #E84C30;
+}
+
+.video-title {
+	text-align: center;
+	margin-top: 100px;
+}
+/*
+**---------------------------------------------session#new
+*/
+
+h1	{
+	text-align: center;
+}
+
+
+.new-user	{
+	font-family: 'Gloria Hallelujah', cursive;
+	text-align: right;
+}
+
+
+button	{
+	background-color: #44B8DF;
+	margin: 0 auto;
+
+}
+
+
+/*
+**---------------------------------------------video#new
+*/
+
+.steps	{
+	font-family: 'Gloria Hallelujah', cursive;
+	margin: 25px 0px;
+
+}
+
+.label	{
+	width: 100%;
+}
+
+.title	{
+	margin-top: 50px;
+
+}
+
+/*
+**---------------------------------------------video#show
+*/
+
+.drop-file	{
+	margin-left: 25%;
+}
+
+/*
+**---------------------------------------------user#show
+*/
+
+.sign-out	{
+	background-color: #44B8DF;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	color: white;
+	padding: 7px 5px 5px 5px;
+}
+
+.sign-out a	{
+	color: white;
+}
+
+.center-text	{
+	text-align: center;
+}
+
+
+
+
+
+
+
+
