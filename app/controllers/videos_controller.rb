@@ -2,6 +2,16 @@ class VideosController < InheritedResources::Base
 
   def index
     @videos = Video.all
+
+    #if a user didn't properly create a video, the video will be deleted
+    @videos.each do |video|
+      @video = Video.find(video.id)
+      if @video.is_complete == false
+         Video.delete_video(@video)
+         flash[:notice] = "video wasn't uploaded due to incomplete information."
+      end
+    end
+
   end
 
   def show
