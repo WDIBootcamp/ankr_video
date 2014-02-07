@@ -45,7 +45,6 @@ class VideosController < InheritedResources::Base
     # got here from upload method
     @video = Video.find(params[:video_id])
     if params[:status].to_i == 200
-      @video = Video.save
       @video.update_attributes(:yt_video_id => params[:id].to_s, :is_complete => true)
       Video.delete_incomplete_videos
       current_user.videos << @video
