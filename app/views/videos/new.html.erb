@@ -1,13 +1,15 @@
-<%= render "header" %>      
+<div class="row">
+	<div class="small-9 large-6 small-centered column">    
 
-  <div class="content">            
-    <h2 class="title">Introduce Yourself</h2>
+	    <h2 class="title">Record a 30 second video.</h2>
 
-	  <p>Step 1: add information about your video.</p>
-	  <!-- redirects me to videos#upload -->
-	  <%= form_for @video, :url => upload_new_video_path, :html => { :class => :form } do |f| -%>
-	    <%= render :partial => "form", :locals => {:f => f} %>
-	  <% end -%>
+		  <div class="steps">Step 1: Go to a nice location and turn on your webcam</div>
+		  <div class="steps">Step 2: Introduce yourself, be yourself, share yourself</div>
 
-  </div>
+		  <!-- redirects me to videos#upload -->
+		  <%= form_for @video, :url => upload_new_video_path, :html => { :class => :form } do |f| -%>
+		    <%= render :partial => "form", :locals => {:f => f} %>
+		  <% end -%>
 
+	</div>
+</div>

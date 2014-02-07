@@ -1,90 +1,73 @@
 // import the CSS framework
 @import "foundation";
+@import "normalize";
 @import url(http://fonts.googleapis.com/css?family=Sniglet|Gloria+Hallelujah|Annie+Use+Your+Telescope|Aclonica|Vampiro+One|Vibur|Archivo+Narrow|Shadows+Into+Light+Two|Averia+Libre);
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create mixins using Foundation classes
-@mixin twelve-columns {
-  @extend .small-12;
-  @extend .columns;
-  }
-@mixin six-columns-centered {
-  @extend .small-6;
-  @extend .columns;
-  @extend .text-center;
-  }
-// create your own classes
-// to make views framework-neutral
-.column {
-  @include six-columns-centered;
-  }
-.form {
-  @include grid-column(6);
-  }
-.form-centered {
-  @include six-columns-centered;
-  }
-.submit {
-  @extend .button;
-  @extend .radius;
-  }
-// apply styles to HTML elements
-// to make views framework-neutral
-main {
-  @include twelve-columns;
+.top-bar-section ul {display: table; margin: 0 auto;}
+.top-bar-section ul li {display: table-cell;}
+
+
+body  {
+  font-family: 'Andika', sans-serif;
+}
+
+input[type='text']  {
+  padding: 0;
+  -webkit-appearance: none;
   background-color: white;
-  }
-section {
-  @extend .row;
-  margin-top: 20px;
-  }
-
-
-// override for the 'Home' navigation link
-
-.top-bar  {
-  background: #E84C30;
+  border: 0px solid #cccccc;
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  font-size: 0.875rem;
+  margin: 0 0 0 0;
+  padding: 0.5rem;
+  height: 4.3125rem;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: none;
+  -moz-transition: -moz-box-shadow 0, border-color white;
+  transition: box-shadow 0s, border-color white;
 }
 
-.top-bar-section li:not(.has-form) a:not(.button) {
-  background: #E84C30;
+input[type='password']  {
+  padding: 0px;
+  -webkit-appearance: none;
+  background-color: white;
+  border: 0px solid #cccccc;
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  font-size: 0.875rem;
+  margin: 5px 0 0 0;
+  padding: 0.5rem;
+  height: 4.3125rem;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: none;
+  -moz-transition: -moz-box-shadow 0, border-color white;
+  transition: box-shadow 0s, border-color white;
 }
 
-.top-bar .name {
-  font-size: rem-calc(13);
-  line-height: 45px; 
-  }
 
-.top-bar .name a {
-  font-family: 'Gloria Hallelujah', cursive;
-  color: white;
-  padding: 0 15px;
-   }
+button  {
+  background-color: #44B8DF;
 
-.comment_link {
-  text-align: left;
 }
 
-.custom-panel {
-  @include panel();
-  $include-html-panel-classes: $include-html-classes;
+input[type='file']  { 
+  height: 150px;
+  background-image: url("yak-12.png");
+  background-repeat: no-repeat;
+  background-size: 150px;
+  text-align: center;
+} 
 
-  // We use these to control the background and border styles
-  $panel-bg: scale-color(#fff, $lightness: -5%);
-  $panel-border-style: solid;
-  $panel-border-size: 1px;
 
-  // We use this % to control how much we darken things on hover
-  $panel-function-factor: -11%;
-  $panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
+input[type='file']:focus  { 
+  border: 0;
+  outline: 0;
+} 
 
-  // We use these to set default inner padding and bottom margin
-  $panel-margin-bottom: rem-calc(20);
-  $panel-padding: rem-calc(20);
-
-  // We use these to set default font colors
-  $panel-font-color: #333;
-  $panel-font-color-alt: #fff;
-
-  $panel-header-adjust: true;
-}

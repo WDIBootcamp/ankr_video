@@ -1,23 +1,31 @@
-<%= render "header" %>      
-         
-<h2 class="title">Introduce Yourself</h2>
+<div class="row">
+	<div class="small-9 large-6 small-centered column">   
 
-<p>Step 2: upload a new video.</p>
+		<h2 class="title">
 
-<!-- 1. The 'widget' div element will contain the upload widget.
-The 'player' div element will contain the player IFrame. -->
+		<div class="steps">Step 3: drop your video!</div></h2>
 
-<!-- <div id="widget"><iframe id="widget" type="text/html" width="640" height="390"
-  src="https://www.youtube.com/upload_embed" frameborder="0"></iframe></div> -->
-<!-- <div id="player"></div> -->
+		<!-- 1. The 'widget' div element will contain the upload widget.
+		The 'player' div element will contain the player IFrame. -->
 
+		<!-- <div id="widget"><iframe id="widget" type="text/html" width="640" height="390"
+		  src="https://www.youtube.com/upload_embed" frameborder="0"></iframe></div> -->
+		<!-- <div id="player"></div> -->
 
-<%= form_tag @upload_info[:url], :multipart => true do %>
-  <%= hidden_field_tag :token, @upload_info[:token] %>
-<!--   <iframe id="widget" type="text/html" width="640" height="390"
-  src="https://www.youtube.com/upload_embed" frameborder="0"></iframe> -->
-  <%= label_tag :file %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Upload video" %>
-<% end %>    
+	<div class="drop-file">   
 
+		<%= form_tag @upload_info[:url], :multipart => true do %>
+		  <%= hidden_field_tag :token, @upload_info[:token] %>
+		<!--   <iframe id="widget" type="text/html" width="640" height="390"
+		  src="https://www.youtube.com/upload_embed" frameborder="0"></iframe> -->
+		  <%= file_field_tag :file %>
+	</div>
+		  <div class="row">
+			<div class="small-9 large-6 small-centered column">   
+		 		 <%= button_tag "Upload video" %>
+		 	</div>
+		 </div>
+		<% end %> 
+
+	</div>
+</div>

@@ -1,13 +1,10 @@
-<div class="first active">
-  <%= link_to "All", videos_path  %>
-</div>
-<div>
-	<!-- redirects me to new.html.erb -->
-  <%= link_to "New", new_video_path %>
+<h1 class="title">Meet <span class=" yak">yak</span></h1>
+
+<div class="yak-img">
+	<%= image_tag("yak-11.png",  size: "500x500") %>
 </div>
 
-<h2 class="title">Meet anyone</h2>
-
+<h1 class="everbody-else">and everbody else!</span></h1>
 
 <%= render @videos %>
 

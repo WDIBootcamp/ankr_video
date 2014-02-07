@@ -1,10 +1,13 @@
 <%# add navigation links to this file %>
 
-<li>
+
+<li class="home"><%= link_to image_tag("nav-icons-09.png",  size: "40x40"), root_path %></li>
+
+<li class="record"><%= link_to image_tag("nav-icons-08.png",  size: "40x40"), new_video_path %></li>
+
 <% if signed_in? %>
-	<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+	<li class="sign-in"><%= link_to image_tag("nav-icons-07.png",  size: "40x40"), user_path(current_user.id) %></li>
 <% else %>
-	<li><%= link_to "Sign up", signup_path %></li>
-	<li><%= link_to "Sign in", signin_path %></li>
+	<li class="sign-in"><%= link_to image_tag("nav-icons-07.png",  size: "40x40"), signin_path %></li>
 <% end %>
-</ul>
+

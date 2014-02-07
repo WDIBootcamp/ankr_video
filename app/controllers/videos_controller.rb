@@ -26,7 +26,12 @@ class VideosController < InheritedResources::Base
 
     if @video
       # redirects me to save_video method (??)
-      @upload_info = Video.token_form(params[:video], save_video_new_video_url(:video_id => @video.id))
+      # unless params[:title]
+      #   flash[:error] = "You must include a title"
+      #   redirect_to "/videos/new"
+      # else
+        @upload_info = Video.token_form(params[:video], save_video_new_video_url(:video_id => @video.id))
+      # end
     else
       # go to the new.html.erb page -- happens just encase somehow the user
       # reached this page without going through the new page
@@ -40,6 +45,7 @@ class VideosController < InheritedResources::Base
     # got here from upload method
     @video = Video.find(params[:video_id])
     if params[:status].to_i == 200
+      @video = Video.save
       @video.update_attributes(:yt_video_id => params[:id].to_s, :is_complete => true)
       Video.delete_incomplete_videos
       current_user.videos << @video
