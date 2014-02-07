@@ -54,7 +54,7 @@ class VideosController < InheritedResources::Base
   def edit
     id = params.require(:id)
 
-    while signed_in?
+    if signed_in?
       if not current_user.videos.where(:id => id).first
         flash[:sucess] = "You can only edit your own videos"
         redirect_to root_path
