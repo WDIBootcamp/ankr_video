@@ -66,4 +66,10 @@ group :development do
 
 	#to generate files for an application layout, navigation links, and flash messages styled with Foundation CSS classes and layout.
 	gem 'rails_layout'
+  	gem 'rspec-rails', '~> 3.0.0.beta'
+  	gem 'guard-rspec' 
+  	gem 'guard-livereload'
+  	gem 'launchy'
+  	gem 'database_cleaner'
+ 	gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i  
 end
