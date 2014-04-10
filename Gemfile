@@ -44,7 +44,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'gon'
 
-group :development do 
+group :development do
 	# better looking errors
 	gem 'better_errors'
 	#live shell - in browser shell
@@ -58,7 +58,7 @@ group :development do
 	#show to see all of your options
 	# gem 'pry_rails'
 
-	#check out your hashes in pry more cleanly 
+	#check out your hashes in pry more cleanly
 	gem 'awesome_print'
 
 	#dont use quiet_assets AND pry-byebug, might not work together
@@ -67,9 +67,9 @@ group :development do
 	#to generate files for an application layout, navigation links, and flash messages styled with Foundation CSS classes and layout.
 	gem 'rails_layout'
   	gem 'rspec-rails', '~> 3.0.0.beta'
-  	gem 'guard-rspec' 
+  	gem 'guard-rspec'
   	gem 'guard-livereload'
   	gem 'launchy'
   	gem 'database_cleaner'
- 	gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i  
+ # 	gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i
 end
