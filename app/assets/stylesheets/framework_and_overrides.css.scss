@@ -51,23 +51,28 @@ input[type='password']  {
   transition: box-shadow 0s, border-color white;
 }
 
+.top-bar-section li:not(.has-form) a:not(.button) {
+padding: 0 15px;
+line-height: 45px;
+background-color: #E84C30;
+}
+
 
 button  {
   background-color: #44B8DF;
 
 }
 
-input[type='file']  { 
+input[type='file']  {
   height: 150px;
   background-image: url("yak-12.png");
   background-repeat: no-repeat;
   background-size: 150px;
   text-align: center;
-} 
+}
 
 
-input[type='file']:focus  { 
+input[type='file']:focus  {
   border: 0;
   outline: 0;
-} 
-
+}

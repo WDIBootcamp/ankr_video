@@ -7,15 +7,20 @@ h1	{
 **---------------------------------------------nav bar
 */
 
-@import "foundation";
-
-
 .top-bar-section ul li	{
 	padding: 0px 18px;
 }
 
-.home, .sign-in, .record {
-background-color: #E84C30;
+.top-bar-section li:not(.has-form) a:not(.button) {
+	background-color: #E84C30;
+}
+
+li.home, li.record, li.sign-in {
+	background-color: #E84C30;
+}
+
+div.top-bar-section {
+	background-color: #E84C30;
 }
 
 @media only screen and (min-width: 0em)	{
@@ -33,13 +38,13 @@ background-color: #E84C30;
 @media only screen and (min-width: 45em) {
 	.top-bar-section ul li {
 	padding: 0px 80px;
-	}	
+	}
 }
 
 @media only screen and (min-width: 90em) {
 	.top-bar-section ul li {
 	padding: 0px 200px;
-	}	
+	}
 }
 
 /*
@@ -144,11 +149,3 @@ button	{
 .center-text	{
 	text-align: center;
 }
-
-
-
-
-
-
-
-
