@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
     <%= include_gon %>
-    <link rel="stylesheet" type="text/css" href="app.css">
-    <link rel="stylesheet" type="text/css" href="foundaiton.css">
     <link rel="icon" href="yak-11.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Ankr Video" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ankr Video" %>">
-    <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
-    <%# Modernizr is required for Zurb Foundation %>
+
+    <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-
-
   </head>
+
   <body>
     <header>
       <%= render 'layouts/navigation' %>
@@ -25,5 +25,6 @@
 
        <%= yield %>
     </main>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>
