@@ -1,16 +1,19 @@
-<div class="row">
-	<div class="small-9 large-6 small-centered column">
-		<div class="custom-panel">
-			<p class="video-title">
-			<%= link_to video.title, user_path(video.user.id) %>
-			</p>
-		</div>
-	</div>
+<% if video %>
 	<div class="row">
 		<div class="small-9 large-6 small-centered column">
-			<div class="flex-video">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.yt_video_id %>?rel=0&showinfo=0&autohide=1&controls=0&preload="auto"&frameborder="0" allowfullscreen></iframe>
+			<div class="custom-panel">
+				<p class="video-title">
+				<%= link_to video.title, user_path(video.user.id) %>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-9 large-6 small-centered column">
+				<div class="flex-video">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.yt_video_id %>?rel=0&showinfo=0&autohide=1&controls=0&preload="auto"&frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="comment_link"><%= link_to "Comment", video_path(video.id) %></div>
 			</div>
 		</div>
 	</div>
-</div>
+<% end %>

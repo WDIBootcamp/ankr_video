@@ -18,16 +18,39 @@ h1	{
 		width: 100%;
 		text-align: center;
 	}
+
 }
 
-.home, .sign-in, .record {
-background-color: #E84C30;
+.top-bar-section li:not(.has-form) a:not(.button) {
+	background-color: #E84C30;
+}
+
+li.home, li.record, li.sign-in {
+	background-color: #E84C30;
+}
+
+div.top-bar-section {
+	background-color: #E84C30;
 }
 
 .top-bar  {
   background: #E84C30;
 }
 
+<<<<<<< HEAD:app/assets/stylesheets/app.css.scss
+=======
+@media only screen and (min-width: 45em) {
+	.top-bar-section ul li {
+	padding: 0px 80px;
+	}
+}
+
+@media only screen and (min-width: 90em) {
+	.top-bar-section ul li {
+	padding: 0px 200px;
+	}
+}
+>>>>>>> 1b1cc5e6e5eb84b34306310e0d58e3feac137657:app/assets/stylesheets/app.css
 
 /*
 **---------------------------------------------video#index
