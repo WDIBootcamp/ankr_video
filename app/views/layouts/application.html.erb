@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <title><%= content_for?(:title) ? yield(:title) : "Ankr Video" %></title>
     <%= include_gon %>
     <link rel="icon" href="yak-11.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Ankr Video" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ankr Video" %>">
-    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-
-
   </head>
+
   <body>
     <header>
       <%= render 'layouts/navigation' %>
@@ -22,5 +24,6 @@
 
        <%= yield %>
     </main>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>
