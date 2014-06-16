@@ -6,8 +6,6 @@
 
 <h1 class="everbody-else">and everbody else!</span></h1>
 
-<%= render @videos %>
-
-
-
-
+<%if @videos != [] %>
+	<%= render @videos %>
+<% end %>
