@@ -4,8 +4,8 @@
 @import "normalize";
 @import url(http://fonts.googleapis.com/css?family=Sniglet|Gloria+Hallelujah|Annie+Use+Your+Telescope|Aclonica|Vampiro+One|Vibur|Archivo+Narrow|Shadows+Into+Light+Two|Averia+Libre);
 
-.top-bar-section ul {display: table; margin: 0 auto;}
-.top-bar-section ul li {display: table-cell;}
+// .top-bar-section ul {display: table; margin: 0 auto;}
+// .top-bar-section ul li {display: table-cell;}
 
 body  {
   font-family: 'Andika', sans-serif;
@@ -77,5 +77,5 @@ input[type='file']:focus  {
   outline: 0;
 }
 
-$topbar-breakpoint: 9999px; // Change to 9999px for always mobile layout
+$topbar-breakpoint: 0px; // Change to 9999px for always mobile layout
 $topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})";
